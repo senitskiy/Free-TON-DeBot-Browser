@@ -48,7 +48,7 @@ const DebotsList = () => {
 				}
 				{!!filteredDebots.length
 					&& <Fragment>
-						<div className='debots-list__section-title'>Suggested DeBots</div>
+						<div className='debots-list__section-title'>Voting Audit DeBots</div>
 						{renderDebotListItems()}
 					</Fragment>
 				}

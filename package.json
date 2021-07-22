@@ -6,8 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@tonclient/core": "^1.16.0",
-    "@tonclient/lib-web": "^1.16.0",
+    "@tonclient/core": "^1.19.0",
+    "@tonclient/lib-web": "^1.19.0",
     "contentful": "^8.1.7",
     "dotenv": "^8.2.0",
     "history": "^5.0.0",
@@ -35,6 +35,7 @@
     "workbox-streams": "^5.1.3"
   },
   "scripts": {
+    "wasm": "cp ./node_modules/@tonclient/lib-web/tonclient.wasm public",
     "start": "react-scripts start",
     "serve": "node node_modules/serve/bin/serve.js -s ./build",
     "build": "react-scripts build",
@@ -62,6 +63,6 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "gh-pages": "^3.1.0",
-    "serve": "^11.3.2"
+    "serve": "^12.0.0"
   }
 }

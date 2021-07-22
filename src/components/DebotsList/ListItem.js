@@ -2,7 +2,7 @@ import React from 'react';
 import tonClientController from 'src/tonClient';
 import { Link } from 'react-router-dom';
 import { createDebotUrl } from 'src/helpers';
-import { DEV_NETWORK, MAIN_NETWORK } from 'src/constants';
+import { DEV_NETWORK, MAIN_NETWORK, FLD_NETWORK } from 'src/constants';
 import { MainNetIcon, DevNetIcon } from 'src/components/icons';
 
 const ListItem = ({ debot, isGrey }) => {
@@ -18,7 +18,7 @@ const ListItem = ({ debot, isGrey }) => {
 		<Link to={linkAddress} className={listItemClassName} onClick={handleNetworkSwitch}>
 			<div className='debots-list__item-title'>
 				{debot.title}
-				{debot.network === DEV_NETWORK && <DevNetIcon />}
+				{debot.network === DEV_NETWORK || debot.network === FLD_NETWORK && <DevNetIcon />}
 				{debot.network === MAIN_NETWORK && <MainNetIcon />}
 			</div>
 			<div className='debots-list__item-address'>

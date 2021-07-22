@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tonClientController from 'src/tonClient';
 import { BackIcon, MainNetIcon, DevNetIcon, CancelIcon } from 'src/components/icons';
 import { OptionsList } from 'src/components';
-import { MAIN_NETWORK, DEV_NETWORK } from 'src/constants';
+import { MAIN_NETWORK, DEV_NETWORK, FLD_NETWORK } from 'src/constants';
 import { removeAccount, selectAccount, setAddAccountModal } from 'src/store/actions/account';
 import SearchBar from '../SearchBar';
 import './index.scss';
@@ -27,7 +27,7 @@ const Header = () => {
 
 	const renderSelectedNetwork = () => (
 		<div className='options-list__selected-item'>
-			{selectedNetwork === DEV_NETWORK ? <DevNetIcon /> : <MainNetIcon />}
+			{selectedNetwork === DEV_NETWORK || selectedNetwork === FLD_NETWORK ? <DevNetIcon /> : <MainNetIcon />}
 		</div>
 	)
 
@@ -67,6 +67,14 @@ const Header = () => {
 						<DevNetIcon />
 						{DEV_NETWORK}
 					</div>
+					<div
+						className='options-list__list-item'
+						onClick={() => handleSelectNetwork(FLD_NETWORK)}
+					>
+						<DevNetIcon />
+						{FLD_NETWORK}
+					</div>
+					
 				</OptionsList>
 				{accountsList?.length
 					? <OptionsList selectedItem={renderSelectedAccount()} height={'max-content'} width={200}>

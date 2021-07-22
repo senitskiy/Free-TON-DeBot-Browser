@@ -6,7 +6,7 @@ import {
 	SET_DEBOTS_FILTER_KEY,
 	SET_LOCAL_DEBOTS_LIST,
 } from '../actions/debot';
-import { USER_DEBOTS_LS_FIELD, DEV_NETWORK } from 'src/constants';
+import { USER_DEBOTS_LS_FIELD, DEV_NETWORK, FLD_NETWORK } from 'src/constants';
 
 const initialState = {
 	stage: [],
@@ -14,8 +14,10 @@ const initialState = {
 	approveWindow: null,
 	filterKey: '',
 	debotsList: [
-		{ title: 'TIP-3 DeBot', address: '0:81c12c2f4514124536aafea59db7df0262d3af877b4477afe6514bbc5bc9f317', network: DEV_NETWORK },
-		{ title: 'SMV DeBot (RSquad)', address: '0:2a92e3d01c530697a0ec3ab5c3494474faa7ea0af5fa30d4ed508115bc9957a7', network: DEV_NETWORK },
+		{ title: 'Core', address: '0:5eeb0b84c8b7eb79e4798b5eab1555b9156b0da09b6ac1bfa76f9dd8a1bf7443', network: FLD_NETWORK },
+		{ title: 'Voting list', address: '0:ceb2e275bf60296291a8d660316df88aca7f6ece14309a10fede7f239adee678', network: FLD_NETWORK },
+		{ title: 'collator', address: '0:a0204b682a71be4169859e0ec3f43d93b34b2e642d43efae73e5a7257912853d', network: FLD_NETWORK },
+		{ title: 'Action team/edit deaudit', address: '0:6a9e4d13385d15cc2e4e223f40dca52c3cf17854debf503e163d6969926a66d8', network: FLD_NETWORK },		
 	],
 	localDebotsList: JSON.parse(localStorage.getItem(USER_DEBOTS_LS_FIELD)) || [],
 }

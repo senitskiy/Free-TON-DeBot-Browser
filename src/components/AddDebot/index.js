@@ -4,7 +4,7 @@ import { addLocalDebot } from 'src/helpers';
 import { ControlWithPopupContext } from 'src/contexts';
 import { OptionsList } from 'src/components';
 import { MainNetIcon, DevNetIcon } from 'src/components/icons';
-import { MAIN_NETWORK, DEV_NETWORK } from 'src/constants';
+import { MAIN_NETWORK, DEV_NETWORK, FLD_NETWORK} from 'src/constants';
 import './index.scss';
 
 const AddDebot = ({ prefilledAddress = '' }) => {
@@ -49,7 +49,7 @@ const AddDebot = ({ prefilledAddress = '' }) => {
 
 	const renderSelectedItem = () => (
 		<div className='options-list__selected-item'>
-			{selectedNetwork === DEV_NETWORK ? <DevNetIcon /> : <MainNetIcon />}
+			{selectedNetwork === DEV_NETWORK || selectedNetwork === FLD_NETWORK ? <DevNetIcon /> : <MainNetIcon />}
 			{selectedNetwork}
 		</div>
 	)
@@ -82,6 +82,13 @@ const AddDebot = ({ prefilledAddress = '' }) => {
 						<DevNetIcon />
 						{DEV_NETWORK}
 					</div>
+					<div
+						className='options-list__list-item'
+						onClick={() => setSelectedNetwork(FLD_NETWORK)}
+					>
+						<DevNetIcon />
+						{FLD_NETWORK}
+					</div>					
 				</OptionsList>
 			</div>
 			<div className='stage-component__input-container'>
